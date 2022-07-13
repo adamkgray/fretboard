@@ -51,49 +51,52 @@ voice_i = 0
 string_i = 0
 fret_i = 0
 
-while True:
-    # select random string
-    string = strings[string_options[string_i]]
+try:
+    while True:
+        # select random string
+        string = strings[string_options[string_i]]
 
-    # select random fret
-    fret = frets[fret_options[fret_i]]
+        # select random fret
+        fret = frets[fret_options[fret_i]]
 
-    # select random voice
-    voice = voices[voice_i]
+        # select random voice
+        voice = voices[voice_i]
 
-    # print prompt to console
-    print("{} string, {} fret ({})".format(
-        string_options[string_i],
-        fret_options[fret_i],
-        voice
-    ))
+        # print prompt to console
+        print("{} string, {} fret ({})".format(
+            string_options[string_i],
+            fret_options[fret_i],
+            voice
+        ))
 
-    # say prompt
-    check_call([
-        "say",
-        "-v",
-        voice,
-        "{} string, {} fret".format(string, fret)
-    ])
+        # say prompt
+        check_call([
+            "say",
+            "-v",
+            voice,
+            "{} string, {} fret".format(string, fret)
+        ])
 
-    # pause
-    sleep(PAUSE)
+        # pause
+        sleep(PAUSE)
 
-    # increment or reshuffle options
-    if string_i == len(strings) - 1:
-        string_i = 0
-        shuffle(string_options)
-    else:
-        string_i += 1
+        # increment or reshuffle options
+        if string_i == len(strings) - 1:
+            string_i = 0
+            shuffle(string_options)
+        else:
+            string_i += 1
 
-    if fret_i == len(frets) - 1:
-        fret_i = 0
-        shuffle(fret_options)
-    else:
-        fret_i += 1
+        if fret_i == len(frets) - 1:
+            fret_i = 0
+            shuffle(fret_options)
+        else:
+            fret_i += 1
 
-    if voice_i == len(voices) - 1:
-        voice_i = 0
-        shuffle(voices)
-    else:
-        voice_i += 1
+        if voice_i == len(voices) - 1:
+            voice_i = 0
+            shuffle(voices)
+        else:
+            voice_i += 1
+except KeyboardInterrupt:
+    print("\r  ")
