@@ -51,6 +51,8 @@ voice_i = 0
 string_i = 0
 fret_i = 0
 
+completed = 0
+
 try:
     while True:
         # select random string
@@ -77,6 +79,8 @@ try:
             "{} string, {} fret".format(string, fret)
         ])
 
+        completed += 1
+
         # pause
         sleep(PAUSE)
 
@@ -98,5 +102,7 @@ try:
             shuffle(voices)
         else:
             voice_i += 1
+
 except KeyboardInterrupt:
+    print("\ncompleted {}!".format(completed))
     print("\r  ")
