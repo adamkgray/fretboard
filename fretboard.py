@@ -7,11 +7,13 @@ import argparse
 
 parser = argparse.ArgumentParser(description='Fretboard app')
 
-parser.add_argument('--min-fret', type=int, help='min fret number')
-parser.add_argument('--max-fret', type=int, help='max fret number')
-parser.add_argument('--min-string', type=int, help='min string number')
-parser.add_argument('--max-string', type=int, help='max string number')
-parser.add_argument('--pause', type=int,
+parser.add_argument('--min-fret', type=int, default=1, help='min fret number')
+parser.add_argument('--max-fret', type=int, default=12, help='max fret number')
+parser.add_argument('--min-string', type=int,
+                    default=1, help='min string number')
+parser.add_argument('--max-string', type=int,
+                    default=6, help='max string number')
+parser.add_argument('--pause', type=int, default=3,
                     help='duration between prompts in seconds')
 
 ordinals = {
@@ -54,26 +56,11 @@ voices = [
 if __name__ == "__main__":
 
     args = parser.parse_args()
-
-    min_fret = 1
-    if args.min_fret is not None:
-        min_fret = args.min_fret
-
-    max_fret = 12
-    if args.max_fret is not None:
-        max_fret = args.max_fret
-
-    min_string = 1
-    if args.min_string is not None:
-        min_string = args.min_string
-
-    max_string = 6
-    if args.max_string is not None:
-        max_string = args.max_string
-
-    pause = 3
-    if args.pause is not None:
-        pause = args.pause
+    min_fret = args.min_fret
+    max_fret = args.max_fret
+    min_string = args.min_string
+    max_string = args.max_string
+    pause = args.pause
 
     prompts = list(product(
         list(range(min_string, max_string + 1)),
