@@ -7,9 +7,9 @@ import argparse
 
 parser = argparse.ArgumentParser(description='Fretboard app')
 
-parser.add_argument('--min-fret', type=int, help='minimum fret number')
+parser.add_argument('--min-fret', type=int, help='min fret number')
 parser.add_argument('--max-fret', type=int, help='max fret number')
-parser.add_argument('--min-string', type=int, help='minimum string number')
+parser.add_argument('--min-string', type=int, help='min string number')
 parser.add_argument('--max-string', type=int, help='max string number')
 parser.add_argument('--pause', type=int,
                     help='duration between prompts in seconds')

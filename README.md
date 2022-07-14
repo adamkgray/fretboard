@@ -25,10 +25,10 @@ Fretboard app
 
 optional arguments:
   -h, --help            show this help message and exit
-  --min-fret MIN_FRET   minimum fret number
+  --min-fret MIN_FRET   min fret number
   --max-fret MAX_FRET   max fret number
   --min-string MIN_STRING
-                        minimum string number
+                        min string number
   --max-string MAX_STRING
                         max string number
   --pause PAUSE         duration between prompts in seconds
