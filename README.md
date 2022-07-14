@@ -16,7 +16,7 @@ The app is only intended to run on MacOS (using the `say` command).
 
 ## Usage
 
-```shell
+```
 $ python fretboard.py -h
 usage: fretboard.py [-h] [--min-fret MIN_FRET] [--max-fret MAX_FRET] [--min-string MIN_STRING]
                     [--max-string MAX_STRING] [--pause PAUSE]
